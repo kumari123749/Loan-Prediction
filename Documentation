@@ -1,0 +1,72 @@
+Exploratory data analysis is an approach to analyse data. It gives some very interesting insights out of data such as:
+-Identifying the most important variables
+-Understanding the relationship between variables
+-Checking for any errors such as missing variables or incorrect entries
+-Know the data types of the dataset – whether continuous/discreet/categorical
+-Understand how the data is distributed
+-Testing a hypothesis or checking assumptions related to a specific model.
+
+Glimpse - Getting the metrics about data types, zeros, infinite numbers, and missing values
+
+df_status returns a table, so it is easy to keep with variables that match certain conditions like:
++ Having at least 80% of non-NA values (p_na < 20)
++ Having less than 50 unique values (unique <= 50)
+
+freq - This retrieves the distribution in a table and a plot (by default) and shows the distribution of absolute and relative numbers.
+
+plot_num - Try to identify high-unbalanced variables and Visually check any variable with outliers
+
+profiling_num - Try to describe each variable based on its distribution (also useful for reporting)
+   - Pay attention to variables with high standard deviation.
+    
+describe - Really useful to have a quick picture for all the variables. But is not as operative as freq and profiling_num when we want to use its results to change our data workflow.
+
+Checking the data
+
+The next step is to look at the data we’re working with. Most of the data we will get, even from the government, can have errors, and it’s important to identify these errors before spending time analyzing the data.
+First we will import the data by using the function read.csv() and show the first part of the dataset:
+
+
+head(Loan_train)
+       The first row in the dataset defines the column header. Each of these headers is described in the above table. Now, we will run the summary function to have a quick look on the data:
+
+summary (Loan_train)
+           By looking at the summary we can conclude that,
+There are blank fields in Gender, Married, Dependents and Self_Employed.
+There are NAs in LoanAmount, Loan_Amount_term and Credit_History.
+
+After loading your data in the R Studio the first step is a data mining technique that involves transforming raw data into an understandable format.
+
+Decision tree is a hierarchical tree structure that can be used to divide up a large collection of records into smaller sets of classes by applying a sequence of simple decision rules.
+Examples of use of decision tress is − predicting an email as spam or not spam, predicting of a tumor is cancerous or Loan prediction
+For new set of predictor variable, we use this model to arrive at a decision on the category (yes/No, spam/not spam) of the data.
+
+
+R Shiny:-
+Shiny is an open package from R Studio, which provides a web application framework to create interactive web applications (visualization) called “Shiny apps”. The ease of working with Shiny has what popularized it among R users. These web applications seamlessly display R objects (like plots, tables etc.) and can also be made live to allow access to anyone.
+
+UI.R: This file creates the user interface in a shiny application. It provides interactivity to the shiny app by taking the input from the user and dynamically displaying the generated output on the screen.
+
+ Server.R: This file contains the series of steps to convert the input given by user into the desired output to be displayed.
+
+Writing UI.R
+If we are creating a shiny application the best way to ensure that the application interface runs smoothly on different devices with different screen resolutions is to create it using fluid page. This ensures that the page is laid out dynamically based on the resolution of each device.
+
+The user interface can be broadly divided into three categories:
+
+Title Panel: 
+The content in the title panel is displayed as metadata, as in top left corner of 
+above image which generally provides name of the application and some other relevant information.
+
+Sidebar Layout: 
+Sidebar layout takes input from the user in various forms like text input, checkbox input, radio button input, drop down input, etc. It is represented in dark background in left section of the above image.
+
+Main Panel: 
+It is part of screen where the output(s) generated as a result of performing a set of operations on input(s) at the server.R is / are displayed.
+
+
+
+
+Writing SERVER.R
+
+This acts as the brain of web application. The server.R is written in the form of a function which maps input(s) to the output(s) by some set of logical operations. The inputs taken in ui.R file are accessed using $ operator (input$InputName). The outputs are also referred using the $ operator (output$OutputName). We will be discussing a few examples of server in the coming sections of the article for better understanding.
